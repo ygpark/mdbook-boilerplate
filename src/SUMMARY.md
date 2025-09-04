@@ -2,7 +2,7 @@
 
 [MDBOOK BoilerPlate](<index.md>)
 - [Markdown](<markdown/index.md>)
-  - [문법](<markdown/Markdown 기본 문법.md>)
+  - [문법](<markdown/문법.md>)
 - [MDBOOK](<mdbook/index.md>)
   - [시작하기](<mdbook/시작하기.md>)
-  - [자동목차 만들기(mdbook-autosummary)](<mdbook/자동목차 만들기.md>)
+  - [자동목차 만들기](<mdbook/자동목차 만들기.md>)
