@@ -14,7 +14,16 @@
       "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src/**)",
       "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate/**)",
       "WebFetch(domain:mermaid.js.org)",
-      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\mermaid/**)"
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
