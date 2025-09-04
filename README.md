@@ -1,4 +1,4 @@
-# test
+# README
 
 An mdBook project with Mermaid diagram support.
 

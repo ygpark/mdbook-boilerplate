@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook\\src/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Bash(powershell:*)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

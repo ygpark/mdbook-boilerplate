@@ -1,0 +1,30 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# These files are text and should be normalized (convert CRLF to LF)
+*.md text
+*.txt text
+*.toml text
+*.yml text
+*.yaml text
+*.json text
+*.html text
+*.css text
+*.js text
+*.rs text
+*.py text
+*.sh text eol=lf
+*.ps1 text eol=crlf
+Makefile text eol=lf
+
+# These files are binary and should not be modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary

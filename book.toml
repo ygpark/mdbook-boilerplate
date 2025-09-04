@@ -1,0 +1,15 @@
+[book]
+authors = ["Young-Gi Park"]
+language = "en"
+src = "src"
+title = "test"
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
