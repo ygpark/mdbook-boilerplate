@@ -9,7 +9,12 @@
       "Bash(powershell:*)",
       "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
       "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
-      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)"
+      "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate/**)",
+      "WebFetch(domain:mermaid.js.org)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\mermaid/**)"
     ],
     "deny": [],
     "ask": []
