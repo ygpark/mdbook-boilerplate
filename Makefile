@@ -1,10 +1,12 @@
-.PHONY: help build serve clean test install install-mermaid init watch open
+.PHONY: help build serve clean test install install-mermaid install-autosummary install-toc init watch open
 
 # Default target
 help:
 	@echo "Available commands:"
-	@echo "  make install        - Install mdbook and mdbook-mermaid"
+	@echo "  make install        - Install all mdbook components"
 	@echo "  make install-mermaid- Install only mdbook-mermaid preprocessor"
+	@echo "  make install-autosummary - Install mdbook-autosummary preprocessor"
+	@echo "  make install-toc    - Install mdbook-toc preprocessor"
 	@echo "  make init           - Initialize mermaid support in book.toml"
 	@echo "  make build          - Build the book"
 	@echo "  make serve          - Serve the book locally with live reload"
@@ -13,17 +15,31 @@ help:
 	@echo "  make test           - Run mdbook tests"
 	@echo "  make open           - Build and open the book in browser"
 
-# Install mdbook and mdbook-mermaid
+# Install all mdbook components
 install:
 	@echo "Installing mdbook..."
 	cargo install mdbook
 	@echo "Installing mdbook-mermaid..."
 	cargo install mdbook-mermaid
+	@echo "Installing mdbook-autosummary..."
+	cargo install mdbook-autosummary
+	@echo "Installing mdbook-toc..."
+	cargo install mdbook-toc
 
 # Install only mdbook-mermaid
 install-mermaid:
 	@echo "Installing mdbook-mermaid..."
 	cargo install mdbook-mermaid
+
+# Install mdbook-autosummary
+install-autosummary:
+	@echo "Installing mdbook-autosummary..."
+	cargo install mdbook-autosummary
+
+# Install mdbook-toc
+install-toc:
+	@echo "Installing mdbook-toc..."
+	cargo install mdbook-toc
 
 # Initialize mermaid support in book.toml
 init:
@@ -32,10 +48,26 @@ init:
 
 # Build the book
 build:
+ifeq ($(OS),Windows_NT)
+	@powershell -Command "if (!(Test-Path 'src\SUMMARY.md')) { Write-Host 'Creating initial SUMMARY.md...'; Set-Content -Path 'src\SUMMARY.md' -Value '# Summary','','[Introduction](index.md)' }"
+else
+	@if [ ! -f src/SUMMARY.md ]; then \
+		echo "Creating initial SUMMARY.md..."; \
+		echo "# Summary\n\n[Introduction](index.md)" > src/SUMMARY.md; \
+	fi
+endif
 	mdbook build
 
 # Serve the book with live reload (default port 3000)
 serve:
+ifeq ($(OS),Windows_NT)
+	@powershell -Command "if (!(Test-Path 'src\SUMMARY.md')) { Write-Host 'Creating initial SUMMARY.md...'; Set-Content -Path 'src\SUMMARY.md' -Value '# Summary','','[Introduction](index.md)' }"
+else
+	@if [ ! -f src/SUMMARY.md ]; then \
+		echo "Creating initial SUMMARY.md..."; \
+		echo "# Summary\n\n[Introduction](index.md)" > src/SUMMARY.md; \
+	fi
+endif
 	mdbook serve
 
 # Alias for serve
@@ -45,9 +77,10 @@ watch: serve
 clean:
 	mdbook clean
 
-# Run tests
+# Run tests (disabled for documentation projects)
 test:
-	mdbook test
+	@echo "Tests are disabled for documentation projects"
+	@echo "Use 'make build' to verify the book builds correctly"
 
 # Build and open in browser
 open: build

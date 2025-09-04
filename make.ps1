@@ -8,8 +8,10 @@ param(
 
 function Show-Help {
     Write-Host "Available commands:" -ForegroundColor Green
-    Write-Host "  .\make.ps1 install         - Install mdbook and mdbook-mermaid"
+    Write-Host "  .\make.ps1 install         - Install all mdbook components"
     Write-Host "  .\make.ps1 install-mermaid - Install only mdbook-mermaid preprocessor"
+    Write-Host "  .\make.ps1 install-autosummary - Install mdbook-autosummary preprocessor"
+    Write-Host "  .\make.ps1 install-toc     - Install mdbook-toc preprocessor"
     Write-Host "  .\make.ps1 init            - Initialize mermaid support in book.toml"
     Write-Host "  .\make.ps1 build           - Build the book"
     Write-Host "  .\make.ps1 serve           - Serve the book locally with live reload"
@@ -25,12 +27,28 @@ function Install-MdBook {
     cargo install mdbook
     Write-Host "Installing mdbook-mermaid..." -ForegroundColor Yellow
     cargo install mdbook-mermaid
+    Write-Host "Installing mdbook-autosummary..." -ForegroundColor Yellow
+    cargo install mdbook-autosummary
+    Write-Host "Installing mdbook-toc..." -ForegroundColor Yellow
+    cargo install mdbook-toc
     Write-Host "Installation complete!" -ForegroundColor Green
 }
 
 function Install-MermaidOnly {
     Write-Host "Installing mdbook-mermaid..." -ForegroundColor Yellow
     cargo install mdbook-mermaid
+    Write-Host "Installation complete!" -ForegroundColor Green
+}
+
+function Install-AutosummaryOnly {
+    Write-Host "Installing mdbook-autosummary..." -ForegroundColor Yellow
+    cargo install mdbook-autosummary
+    Write-Host "Installation complete!" -ForegroundColor Green
+}
+
+function Install-TocOnly {
+    Write-Host "Installing mdbook-toc..." -ForegroundColor Yellow
+    cargo install mdbook-toc
     Write-Host "Installation complete!" -ForegroundColor Green
 }
 
@@ -42,6 +60,14 @@ function Initialize-Mermaid {
 
 function Build-Book {
     Write-Host "Building the book..." -ForegroundColor Yellow
+    
+    # Create SUMMARY.md if it doesn't exist
+    $summaryPath = Join-Path $PSScriptRoot "src\SUMMARY.md"
+    if (-not (Test-Path $summaryPath)) {
+        Write-Host "Creating initial SUMMARY.md..." -ForegroundColor Cyan
+        "# Summary`n`n[Introduction](index.md)" | Out-File -FilePath $summaryPath -Encoding UTF8
+    }
+    
     mdbook build
     if ($LASTEXITCODE -eq 0) {
         Write-Host "Build complete!" -ForegroundColor Green
@@ -54,6 +80,14 @@ function Build-Book {
 function Start-Server {
     Write-Host "Starting development server on http://localhost:3000" -ForegroundColor Yellow
     Write-Host "Press Ctrl+C to stop the server" -ForegroundColor Cyan
+    
+    # Create SUMMARY.md if it doesn't exist
+    $summaryPath = Join-Path $PSScriptRoot "src\SUMMARY.md"
+    if (-not (Test-Path $summaryPath)) {
+        Write-Host "Creating initial SUMMARY.md..." -ForegroundColor Cyan
+        "# Summary`n`n[Introduction](index.md)" | Out-File -FilePath $summaryPath -Encoding UTF8
+    }
+    
     mdbook serve
 }
 
@@ -112,6 +146,8 @@ switch ($Command.ToLower()) {
     "help"           { Show-Help }
     "install"        { Install-MdBook }
     "install-mermaid" { Install-MermaidOnly }
+    "install-autosummary" { Install-AutosummaryOnly }
+    "install-toc"    { Install-TocOnly }
     "init"           { Initialize-Mermaid }
     "build"          { Build-Book }
     "serve"          { Start-Server }
