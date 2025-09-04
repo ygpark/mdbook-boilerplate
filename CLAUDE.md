@@ -124,8 +124,40 @@ graph TD
 
 Add `<!-- toc -->` in any markdown file to auto-generate a table of contents at that location.
 
+## Scripts and Utilities
+
+### Mermaid Processing Script
+
+The project includes a Python script at `scripts/fix_mermaid.py` for processing Mermaid diagrams:
+
+```bash
+# Process individual Mermaid files to convert simple blocks into code + render format
+python scripts/fix_mermaid.py src/93_mermaid/filename.md
+```
+
+This script:
+- Converts simple `````mermaid` blocks into dual format (code example + rendered diagram)
+- Removes duplicate blocks automatically  
+- Uses object-oriented design with `MermaidBlock` class for better maintainability
+
+### Content Organization
+
+The project uses a numbered directory structure for content organization:
+- `src/91_mdbook/` - mdBook documentation and tutorials
+- `src/92_markdown/` - Markdown syntax and examples  
+- `src/93_mermaid/` - Mermaid diagram documentation and examples
+
+Each content directory should include an `index.md` file as the chapter introduction.
+
 ## Important Notes
 
 - **SUMMARY.md is auto-generated** - Do not edit manually; changes will be overwritten
 - **Mermaid initialization required** - Run `make init` or `.\make.ps1 init` before first use
 - **Tests disabled** - `make test` is disabled for documentation projects; use `make build` to verify
+- **Korean content supported** - The project includes Korean documentation alongside English content
+
+## important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
