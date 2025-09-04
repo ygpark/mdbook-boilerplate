@@ -23,7 +23,9 @@
       "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
       "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
       "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate\\src\\93_mermaid/**)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate/**)",
+      "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate/**)"
     ],
     "deny": [],
     "ask": []
