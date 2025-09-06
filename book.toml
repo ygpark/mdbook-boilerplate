@@ -1,8 +1,8 @@
 [book]
 authors = ["Young-Gi Park"]
-language = "en"
+language = "ko"
 src = "src"
-title = "test"
+title = "mdbook-boilerplate"
 
 [build]
 build-dir = "book"
