@@ -1,5 +1,4 @@
 {
-  "model": "sonnet",
   "permissions": {
     "allow": [
       "Read(/C:\\Users\\ghost\\Documents\\mdbook/**)",
@@ -7,9 +6,11 @@
       "WebFetch(domain:mermaid.js.org)",
       "Bash(powershell:*)",
       "Bash(python:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:www.markdownguide.org)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "model": "sonnet"
 }
