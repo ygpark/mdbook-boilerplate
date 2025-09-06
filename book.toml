@@ -1,6 +1,5 @@
 [book]
 authors = ["Young-Gi Park"]
-language = "ko"
 src = "src"
 title = "mdbook-boilerplate"
 

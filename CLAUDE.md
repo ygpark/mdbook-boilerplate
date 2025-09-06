@@ -9,7 +9,7 @@ This is an mdBook project configured with multiple preprocessors:
 - **mdbook-autosummary**: Auto-generates SUMMARY.md based on file structure
 - **mdbook-toc**: Generates table of contents within chapters
 
-The book is titled "test" authored by Young-Gi Park.
+The book is titled "mdbook-boilerplate" authored by Young-Gi Park.
 
 ## Common Commands
 
@@ -74,9 +74,9 @@ make install-toc         # or: .\make.ps1 install-toc
 
 ### Testing
 ```bash
-make test
+make test  # Tests are disabled - use make build to verify
 # or
-mdbook test
+mdbook test  # Disabled for documentation projects
 ```
 
 ## Architecture & Configuration
@@ -89,16 +89,17 @@ mdbook test
   - `index.md` files - Chapter index pages (used by autosummary)
   - Content organized in directories (e.g., `markdown/`, `mdbook/`)
 - `book/` - Generated output directory (gitignored)
-- `make.ps1` - PowerShell build script for Windows users
-- `Makefile` - Build automation for Unix-like systems
+- `make.ps1` - PowerShell build script for Windows users (includes requirement checking)
+- `Makefile` - Build automation for Unix-like systems (cross-platform SUMMARY.md creation)
+- `scripts/` - Python utility scripts for content processing
 
 ### Preprocessor Chain
 
 The preprocessors execute in this order (configured in `book.toml`):
-1. **autosummary** - Scans `src/` directory and auto-generates `SUMMARY.md`
-2. **links** - Processes internal links
-3. **toc** - Adds table of contents to chapters
-4. **mermaid** - Renders Mermaid diagrams
+1. **autosummary** - Scans `src/` directory and auto-generates `SUMMARY.md` (uses index.md as index-name, ignores hidden files)
+2. **links** - Processes internal links (runs after autosummary)
+3. **toc** - Adds table of contents to chapters (max-level: 3, runs after autosummary)
+4. **mermaid** - Renders Mermaid diagrams using external command
 
 ## Content Guidelines
 
@@ -128,21 +129,31 @@ Add `<!-- toc -->` in any markdown file to auto-generate a table of contents at 
 
 ### Mermaid Processing Script
 
-The project includes a Python script at `scripts/fix_mermaid.py` for processing Mermaid diagrams:
+The project includes Python utility scripts for content processing:
 
 ```bash
 # Process individual Mermaid files to convert simple blocks into code + render format
 python scripts/fix_mermaid.py src/93_mermaid/filename.md
+
+# Toggle autosummary preprocessor on/off  
+python scripts/toggle-autosummary.py
+
+# Add numbering to headings
+python scripts/number_headings.py
 ```
 
-This script:
+**fix_mermaid.py**:
 - Converts simple `````mermaid` blocks into dual format (code example + rendered diagram)
 - Removes duplicate blocks automatically  
 - Uses object-oriented design with `MermaidBlock` class for better maintainability
 
+**toggle-autosummary.py**: Enables/disables the autosummary preprocessor
+**number_headings.py**: Adds automatic numbering to document headings
+
 ### Content Organization
 
 The project uses a numbered directory structure for content organization:
+- `src/01_mdbook_official/` - Official mdBook documentation (comprehensive guide)
 - `src/91_mdbook/` - mdBook documentation and tutorials
 - `src/92_markdown/` - Markdown syntax and examples  
 - `src/93_mermaid/` - Mermaid diagram documentation and examples
@@ -154,7 +165,8 @@ Each content directory should include an `index.md` file as the chapter introduc
 - **SUMMARY.md is auto-generated** - Do not edit manually; changes will be overwritten
 - **Mermaid initialization required** - Run `make init` or `.\make.ps1 init` before first use
 - **Tests disabled** - `make test` is disabled for documentation projects; use `make build` to verify
-- **Korean content supported** - The project includes Korean documentation alongside English content
+- **create-missing: false** - mdBook won't create missing files referenced in SUMMARY.md
+- **Playground disabled** - Code blocks are not runnable (suitable for documentation)
 
 ## important-instruction-reminders
 Do what has been asked; nothing more, nothing less.
