@@ -1,0 +1,104 @@
+/* VitePress-style CSS for mdBook */
+
+/* ===== TYPOGRAPHY ===== */
+
+/* Main content */
+#content main {
+  font-size: 16px !important;
+  color: #213547 !important;
+  line-height: 1.7 !important;
+}
+
+/* Headings */
+#content h1 {
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid #e2e2e3 !important;
+  padding-bottom: 16px !important;
+  margin-top: 0 !important;
+  margin-bottom: 32px !important;
+  color: #213547 !important;
+  line-height: 1.25 !important;
+}
+
+#content h2 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  border-top: 1px solid #e2e2e3 !important;
+  padding-top: 24px !important;
+  margin: 48px 0 16px !important;
+  color: #213547 !important;
+  line-height: 32px !important;
+  letter-spacing: -0.02em !important;
+}
+
+#content h3 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin: 32px 0 0 !important;
+  color: #213547 !important;
+  line-height: 28px !important;
+  letter-spacing: -0.01em !important;
+}
+
+#content h4 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 1.33em 0 !important;
+  color: #213547 !important;
+  line-height: 1.25 !important;
+}
+
+#content h5 {
+  font-size: 0.83em !important;
+  font-weight: 600 !important;
+  margin: 1.67em 0 !important;
+  color: #213547 !important;
+  line-height: 1.25 !important;
+}
+
+/* Paragraphs */
+#content p {
+  font-size: 16px !important;
+  color: #213547 !important;
+  line-height: 1.7 !important;
+}
+
+/* ===== COMPONENTS ===== */
+
+/* Code blocks */
+pre,
+.content pre,
+#content pre,
+main pre,
+.hljs,
+.language-js,
+code[class*="language-"],
+pre[class*="language-"] {
+  border-radius: 8px !important;
+  -webkit-border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+}
+
+/* Lists */
+#content ul li,
+#content ol li {
+  margin-top: 8px !important;
+}
+
+/* ===== INTERACTIONS ===== */
+
+/* Header link icons */
+html body #content h1:hover::after,
+html body #content h2:hover::after,
+html body #content h3:hover::after,
+html body #content h4:hover::after,
+html body #content h5:hover::after,
+html body #content h6:hover::after {
+  content: " #" !important;
+  color: #3451b2 !important;
+  font-weight: normal !important;
+  opacity: 0.7 !important;
+  display: inline-block !important;
+  margin-left: 8px !important;
+}

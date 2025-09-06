@@ -31,6 +31,7 @@ after = ["autosummary"]
 [output]
 
 [output.html]
+additional-css = ["theme/vitepress.css"]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 # Disable rustdoc tests for documentation

@@ -5,7 +5,8 @@
       "Read(/C:\\Users\\ghost\\Documents\\GitHub\\mdbook-boilerplate/**)",
       "WebFetch(domain:mermaid.js.org)",
       "Bash(powershell:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
