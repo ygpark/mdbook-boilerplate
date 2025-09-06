@@ -1,5 +1,7 @@
 # Mindmap 구문 및 예제
 
+<!-- toc -->
+
 ## 개요
 
 > 마인드맵은 정보를 계층적으로 시각적으로 구성하여 전체의 부분들 간의 관계를 보여주는 다이어그램입니다.
@@ -37,6 +39,7 @@ mindmap
 Mermaid는 여러 노드 모양을 지원합니다:
 
 ### 사용 가능한 모양
+
 - 사각형
 - 둥근 사각형
 - 원형
@@ -48,6 +51,7 @@ Mermaid는 여러 노드 모양을 지원합니다:
 ## 고급 기능
 
 ### 아이콘
+
 `::icon()` 구문을 사용하여 노드에 아이콘을 추가할 수 있습니다:
 
 ````
@@ -67,6 +71,7 @@ mindmap
 ```
 
 ### 클래스
+
 트리플 콜론을 사용하여 사용자 정의 클래스를 적용할 수 있습니다:
 
 ````
@@ -86,6 +91,7 @@ mindmap
 ## 마크다운 문자열
 
 텍스트 서식을 지원합니다:
+
 - `**`로 볼드 텍스트
 - `*`로 이탤릭
 - 자동 텍스트 줄바꿈
@@ -96,7 +102,7 @@ mindmap
 
 ```html
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 </script>
 ```
 

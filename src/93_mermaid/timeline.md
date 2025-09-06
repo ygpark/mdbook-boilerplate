@@ -1,5 +1,7 @@
 # 타임라인 다이어그램
 
+<!-- toc -->
+
 ## 개요
 
 타임라인 다이어그램은 사건이나 기간을 시간순으로 그래픽으로 표현한 것입니다. 문서에 설명된 바와 같이, 이는 "사건, 날짜 또는 시간 기간의 연대기를 보여주며" 사건들 간의 관계를 나타낼 수 있습니다.
@@ -61,7 +63,7 @@ timeline
     section 초기 년도
     2014 : 초기 컨셉
     2015 : 첫 번째 프로토타입
-    
+
     section 성장 단계
     2018 : 커뮤니티 확장
     2020 : 주요 버전 릴리스
@@ -73,7 +75,7 @@ timeline
     section 초기 년도
     2014 : 초기 컨셉
     2015 : 첫 번째 프로토타입
-    
+
     section 성장 단계
     2018 : 커뮤니티 확장
     2020 : 주요 버전 릴리스
@@ -93,6 +95,7 @@ timeline
 ## 테마
 
 지원되는 테마:
+
 - base
 - forest
 - dark
@@ -105,7 +108,7 @@ timeline
 
 ```html
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 </script>
 ```
 

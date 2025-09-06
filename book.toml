@@ -27,6 +27,7 @@ after = ["autosummary"]
 
 [preprocessor.toc] 
 after = ["autosummary"]
+max-level = 2
 
 [output]
 

@@ -1,5 +1,7 @@
 # MDBOOK BoilerPlate
 
+<!-- toc -->
+
 ## 2
 
 ### 3

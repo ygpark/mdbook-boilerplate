@@ -26,7 +26,7 @@
   font-weight: 600 !important;
   border-top: 1px solid #e2e2e3 !important;
   padding-top: 24px !important;
-  margin: 48px 0 16px !important;
+  margin: 64px 0 16px !important;
   color: #213547 !important;
   line-height: 32px !important;
   letter-spacing: -0.02em !important;
@@ -84,6 +84,11 @@ pre[class*="language-"] {
 #content ul li,
 #content ol li {
   margin-top: 8px !important;
+}
+
+/* Horizontal Rule */
+#content hr {
+  margin: 128px 0 !important;
 }
 
 /* ===== INTERACTIONS ===== */
