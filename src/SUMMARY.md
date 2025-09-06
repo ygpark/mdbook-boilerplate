@@ -10,8 +10,3 @@
   - [플로우차트 (Flowchart)](<93_mermaid/flowchart.md>)
   - [Mindmap 구문 및 예제](<93_mermaid/mindmap.md>)
   - [타임라인 다이어그램](<93_mermaid/timeline.md>)
-- [Markdown](<markdown/index.md>)
-  - [문법](<markdown/문법.md>)
-- [MDBOOK](<mdbook/index.md>)
-  - [시작하기](<mdbook/시작하기.md>)
-  - [자동목차 만들기](<mdbook/자동목차 만들기.md>)
