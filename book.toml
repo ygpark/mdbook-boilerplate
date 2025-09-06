@@ -6,7 +6,7 @@ title = "mdbook-boilerplate"
 
 [build]
 build-dir = "book"
-create-missing = true
+create-missing = false
 
 [preprocessor]
 
@@ -22,7 +22,7 @@ after = ["autosummary"]
 
 [preprocessor.toc] 
 after = ["autosummary"]
-max-level = 2
+max-level = 3
 
 [output]
 
