@@ -1,4 +1,4 @@
-.PHONY: help build serve clean test install install-mermaid install-autosummary install-toc init watch open
+.PHONY: help build serve clean test install install-mermaid install-autosummary install-toc init dev open
 
 # Default target
 help:
@@ -10,7 +10,7 @@ help:
 	@echo "  make init           - Initialize mermaid support in book.toml"
 	@echo "  make build          - Build the book"
 	@echo "  make serve          - Serve the book locally with live reload"
-	@echo "  make watch          - Same as serve (alias)"
+	@echo "  make dev          - Same as serve (alias)"
 	@echo "  make clean          - Remove build artifacts"
 	@echo "  make test           - Run mdbook tests"
 	@echo "  make open           - Build and open the book in browser"
@@ -71,7 +71,7 @@ endif
 	mdbook serve
 
 # Alias for serve
-watch: serve
+dev: serve
 
 # Clean build artifacts
 clean:
